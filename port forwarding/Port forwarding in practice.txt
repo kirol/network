@@ -1,0 +1,6 @@
+﻿Ứng dụng thực tiễn của port-forwarding:
+
+    Running a public HTTP server within a private LAN
+    Permitting Secure Shell access to a host on the private LAN from the Internet
+    Permitting FTP access to a host on a private LAN from the Internet
+    Running a publicly available game server within a private LAN
