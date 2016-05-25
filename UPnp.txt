@@ -1,0 +1,6 @@
+http://www.howtogeek.com/255166/how-to-enable-and-troubleshoot-remote-access-to-your-plex-media-server/ 
+UPnP vs manually port forwarding
+
+Enable UPnP For Automatic Connections
+
+Is that your router supports either NAT-PMP (less common) or UPnP (more common). Both of these services allow for automatic port forwarding and if your router supports them, then Plex Media Server will automatically configure its own port forwarding. If the router does not support UPnP, we have to access router's config page and config port forwarding manually. 
