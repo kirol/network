@@ -1,0 +1,13 @@
+
+Does the DHCP server know about static IP addresses?
+I have a simple setup up at home with a vendor provided ADSL router and a few home devices I connect to it to connect to the outside world. I would like one of my devices to have a static internal IP address so I can use it as a server inside my house. I have done this by just setting up a static IP address on the particular device. This seems to work. However, does the dhcp server in the router somehow know about this static ip address or might it try to hand out that ip address to another device that joins the networks?
+
+
+
+In short the general rule of thumb is no the DHCP server will not know about this Static IP and if hands that same IP out to another device you will have an IP conflict which can take both devices offline.
+
+You have a two options really:
+
+    Check what the DHCP scope is and make sure your static IP is outside of that scope for example if your device hands out between 192.168.0.10 to 192.168.0.200 then set the static IP to 192.168.0.210
+
+    If your DHCP router supports IP reservations you can reserve the IP so even if it is in the IP range you can tell it the Servers MAC address and it will always hand the same IP out to that device (kind of a mix of static and DHCP).
