@@ -1,0 +1,27 @@
+Integrating DHCP with DNS
+
+Applies To: Windows Server 2008 R2
+DNS servers provide domain name resolution for network resources. They associate the TCP/IP address assigned by DHCP to a client with its fully qualified domain name (FQDN). This association, or mapping, of an IP address to a domain name requires that a change in either the address or the name necessitates an update of the information in DNS. The DHCP protocol does not automatically update DNS in the event that the DHCP server changes the IP address of a client. To facilitate this interaction, servers running Windows Server® 2008 and DHCP and clients running DHCP can register with DNS, allowing cooperation between the two. When DHCP changes IP address information, corresponding DNS updates synchronize name-to-address associations for the computer.
+When a DHCP server registers and updates DNS pointer (PTR) and address (A) resource records on behalf of its DHCP-enabled clients, it uses the information contained within an additional DHCP option: the Client FQDN option (option 81), which permits a client to provide its FQDN and any instructions to the DHCP server that is used to process DNS dynamic updates on its behalf.
+The following reasons or events can trigger a dynamic update:
+Added, removed, or modified IP addresses in the TCP/IP properties configuration for any of the installed network connections. 
+
+An IP address lease changes or renews any of the installed network connections with the DHCP server. For example, when a computer starts or after use of the ipconfig /renew command. 
+
+Upon use of the ipconfig /registerdns command, which manually forces a refresh of the client name registration in DNS.
+
+When one of these events triggers a dynamic update, the DNS Client service (not the DHCP Client service) sends updates. The DNS Client service performs this function for all network connections on the client, including any that are not configured to use DHCP.
+When a qualified DNS client (such as a computer running Windows XP Professional or Windows Vista®) issues an update, DHCP servers running Windows Server 2008 process the update to determine in which of three ways the server will initiate updates on behalf of the client:
+The DHCP server always registers the client for both the forward (A resource records) and reverse lookup or pointer (PTR resource records) with DNS.
+
+The DHCP server never registers the name-to-address (A resource records) for clients.
+
+The DHCP server registers the client for both forward (A resource records) and reverse lookup or pointer (PTR resource records) when requested to do so by the client.
+
+The ability to register both A and PTR resource records enables a DHCP server to act as a proxy for clients running other operating systems, such as Microsoft Windows Millennium Edition, or Windows 98, for the purpose of DNS dynamic update registration. The DHCP server can automatically differentiate between Windows 2000, Windows XP Professional, Windows Vista, and other clients.
+DHCP requires the use of DNS dynamic update to keep name-to-address mapping information synchronized. Using DHCP and DNS together on a network might cause problems when using older, static DNS servers, which cannot interact dynamically when DHCP client configurations change. You can avoid failed DNS lookups for DHCP-registered clients when using static DNS service by doing the following:
+If you are using Windows Internet Name Service (WINS) servers on a network, enable WINS lookup for DHCP clients that use NetBIOS.
+
+Assign IP address reservations with an infinite lease duration for DHCP clients that use DNS only and do not support NetBIOS.
+
+Wherever possible, upgrade or replace older static DNS servers with DNS servers that support DNS dynamic updates.
