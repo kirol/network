@@ -1,0 +1,1 @@
+Using loopback address (127.0.0.1) allows you to see what network services are being offered by your system without any firewall settings interfering with the results
