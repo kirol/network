@@ -1,0 +1,4 @@
+As a general rule, switches are superior to hubs. Hubs mirror all traffic to all computers, whereas switches are smart enough to send packets only to the intended destination. Switches also allow full-duplex transmission, in which both parties can send data at the
+same time (like two people talking on a telephone). Hubs permit only half-duplex transmission, in which the two computers must take turns (like two people using walkie-talkies).
+The result is that switches let two computers engage in full-speed data transfers with each
+other; with a hub, these two transfers would interfere with each other.
