@@ -1,0 +1,5 @@
+Enable automatic metric
+
+The Automatic Metric feature is configured independently for each network interface in the network. This feature is useful in situations where you have more than one network interface of the same speed, for example, when each network interface has been assigned a default gateway. In this situation, you may want to manually configure the metric on one network interface, and enable the Automatic Metric feature to configure the metric of the other network interface. This setup can enable you to control the network interface that is used first in the routing of IP traffic.
+
+In addition, the metric that is assigned to specific default gateways can be configured independently for each gateway. This setup enables a further level of control over the metric that is used for the local routes. For example, it is possible to enable the Automatic Metric feature to configure the routes that are assigned to the network interface, and at the same time to manually configure the metric that is assigned to the default gateways.
