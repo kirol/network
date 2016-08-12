@@ -1,0 +1,3 @@
+Asuswrt has the router run as a DNS proxy (that's the short version of it). That field on the DHCP page will usually contain your router's IP (that's the default when it's left empty), which means your clients will get your router's IP as the DNS, and then the router performs all DNS lookups using the DNS obtained either from your ISP, or manually entered on the WAN page. Having this means that your router can easily act as a caching server for DNS queries for your whole LAN, which can improve performances.
+
+So if you wanted to use custom DNS servers, you would have to enter them on the WAN page, while leaving the DNS entry on the DHCP page untouched.
