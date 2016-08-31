@@ -1,0 +1,1 @@
+Use firebug, change method from get to post
